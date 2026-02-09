@@ -7,17 +7,12 @@
   :root {
     /* Backgrounds */
     --bg-cream: #f6f2ec;
-    /* primary canvas */
     --bg-warm: #ece8df;
-    /* alternating sections */
     --bg-accent: #7a7d4f;
-    /* CTA / emphasis */
 
     /* Text */
     --text-primary: #2c3a1f;
-    /* headings / nav */
     --text-body: #2f2f2f;
-    /* paragraphs */
     --text-muted: #6f6f6f;
     --text-inverse: #ffffff;
 
@@ -38,10 +33,7 @@
     line-height: 1.65;
   }
 
-  h1,
-  h2,
-  h3,
-  h4 {
+  h1, h2, h3, h4 {
     font-family: var(--font-serif);
     font-weight: 400;
     letter-spacing: -0.015em;
@@ -86,47 +78,7 @@
 }
 
 /* ===============================
-   BUTTON SYSTEM (FIXED)
-================================ */
-@layer components {
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 0.75rem 1.8rem;
-    border: 1px solid var(--text-primary);
-    background: transparent;
-
-    color: var(--text-primary);
-
-    font-size: 0.65rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-
-    transition: background-color 0.25s ease, color 0.25s ease;
-  }
-
-  /* Light background hover */
-  .btn:hover {
-    background: var(--text-primary);
-    color: var(--bg-cream);
-  }
-
-  /* Dark section buttons */
-  .btn-inverse {
-    border-color: #ffffff;
-    color: #ffffff;
-  }
-
-  .btn-inverse:hover {
-    background: #ffffff;
-    color: var(--bg-accent);
-  }
-}
-
-/* ===============================
-   BUTTON SYSTEM (POLISHED)
+   BUTTON SYSTEM (FINAL)
 ================================ */
 @layer components {
   .btn {
@@ -143,21 +95,17 @@
     letter-spacing: 0.22em;
     text-transform: uppercase;
 
-    /* 👇 THIS IS THE KEY */
     transition:
-      background-color 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-      color 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-      border-color 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-
+      background-color 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      color 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.35s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  /* Light background hover */
   .btn:hover {
     background: var(--text-primary);
     color: var(--bg-cream);
   }
 
-  /* Dark section buttons */
   .btn-inverse {
     border-color: #ffffff;
     color: #ffffff;
@@ -183,7 +131,7 @@
   }
 
   .blog-nav a {
-    transition: opacity 0.2s ease;
+    transition: opacity 0.25s ease;
   }
 
   .blog-nav a:hover {
@@ -192,13 +140,9 @@
 }
 
 /* ===============================
-   CONTACT PAGE POLISH
+   CONTACT PAGE
 ================================ */
 @layer components {
-  .contact-hero-note {
-    letter-spacing: 0.04em;
-  }
-
   .appointment-frame {
     background: #ffffff;
     border: 1px solid var(--border-soft);
@@ -254,12 +198,6 @@
    SERVICES PAGE
 ================================ */
 @layer components {
-  .services-list {
-    display: flex;
-    flex-direction: column;
-    gap: 5rem;
-  }
-
   .service-row {
     display: grid;
     gap: 4rem;
@@ -275,7 +213,7 @@
       direction: rtl;
     }
 
-    .service-row-reverse>* {
+    .service-row-reverse > * {
       direction: ltr;
     }
   }
@@ -285,48 +223,10 @@
     aspect-ratio: 3 / 4;
     background: var(--bg-warm);
   }
-
-  .service-text h2 {
-    margin-bottom: 1.5rem;
-    max-width: 28ch;
-    color: var(--text-primary);
-  }
-
-  .service-text p {
-    max-width: 42ch;
-    font-size: 0.92rem;
-    line-height: 1.75;
-    color: #4b4b4b;
-  }
 }
 
 /* ===============================
-   MOBILE POLISH
-================================ */
-@media (max-width: 767px) {
-  .section {
-    padding-block: 4rem;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.6rem;
-  }
-
-  .service-image {
-    aspect-ratio: 5 / 4;
-  }
-
-  .social-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* ===============================
-   SUBSCRIBE – FINAL (THEME SAFE)
+   SUBSCRIBE SECTION
 ================================ */
 @layer components {
   .subscribe-dark {
@@ -334,16 +234,6 @@
     padding: clamp(4rem, 7vw, 6rem);
     text-align: center;
     color: var(--text-inverse);
-  }
-
-  .subscribe-dark h2 {
-    color: var(--text-inverse);
-    margin-bottom: 1rem;
-  }
-
-  .subscribe-dark p {
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 3rem;
   }
 
   .subscribe-form {
@@ -358,48 +248,46 @@
     padding: 0.9rem 1rem;
     border: none;
     background: #ffffff;
-    color: #2f2f2f;
     font-size: 0.9rem;
   }
+}
 
-  .subscribe-form input::placeholder {
-    color: #8a8a8a;
+/* ===============================
+   MOBILE POLISH (FINAL)
+================================ */
+@media (max-width: 767px) {
+  .section {
+    padding-block: 3.5rem;
   }
 
-  .subscribe-form button {
-    padding: 0.9rem 1.8rem;
-    background: transparent;
-    border: 1px solid #ffffff;
-    color: #ffffff;
-
-    font-size: 0.65rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-
-    transition: all 0.25s ease;
+  h1 {
+    font-size: 1.9rem;
+    line-height: 1.2;
   }
 
-  .subscribe-form button:hover {
-    background: #ffffff;
-    color: var(--bg-accent);
+  h2 {
+    font-size: 1.55rem;
+    line-height: 1.25;
   }
 
-  .subscribe-note {
-    display: block;
-    margin-top: 2rem;
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.85);
+  h3 {
+    font-size: 1.15rem;
   }
 
-  @media (max-width: 767px) {
-    .subscribe-form {
-      flex-direction: column;
-      align-items: center;
-    }
+  p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
 
-    .subscribe-form input {
-      width: 100%;
-      max-width: 320px;
-    }
+  .btn {
+    padding: 0.9rem 2rem;
+  }
+
+  .social-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-image {
+    aspect-ratio: 5 / 4;
   }
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Reveal from "@/components/ui/Reveal";
 
@@ -10,19 +12,33 @@ export default function ContactHero() {
         <Reveal>
           <div className="pt-12">
 
-            <h1 className="mb-8">Let’s Connect</h1>
+            <h1 className="mb-8">
+              Get in Touch
+            </h1>
 
             <p className="text-sm mb-4">
-              Starting therapy is courageous.
+              Taking the first step can feel difficult — and you don’t have to do it alone.
             </p>
 
             <p className="max-w-sm text-sm leading-relaxed">
-              Get in touch for questions, or to book a free 15-minute consultation.
+              If you have questions about therapy, availability, or whether we might
+              be a good fit, you’re welcome to reach out. I offer a brief consultation
+              to help you decide on next steps.
             </p>
 
             <div className="mt-16 flex gap-6 items-end">
-              <Image src="/images/social1.jpg" alt="" width={140} height={180} />
-              <Image src="/images/social2.jpg" alt="" width={140} height={180} />
+              <Image
+                src="/images/social1.jpg"
+                alt="Calm interior detail"
+                width={140}
+                height={180}
+              />
+              <Image
+                src="/images/social2.jpg"
+                alt="Soft natural light"
+                width={140}
+                height={180}
+              />
             </div>
 
           </div>
@@ -32,11 +48,10 @@ export default function ContactHero() {
         <Reveal>
           <div className="bg-[#2c3a1f] text-white px-8 py-8 max-w-md md:mt-24">
             <p className="text-xs leading-loose tracking-wide">
-              <strong>PLEASE NOTE:</strong> If you opt to use a “Form Block” on
-              your contact page this is not HIPAA-compliant. Squarespace stores
-              data that is input into forms in the Marketing tab under Profiles.
-              Instead, you can embed a HIPAA-compliant form, a link to your client
-              portal, or simply put your email address.
+              <strong>Please note:</strong> Email and phone are the best ways to get in
+              touch. For privacy and confidentiality, I do not use standard contact
+              forms to collect sensitive information. You’re welcome to reach out
+              directly to begin the conversation.
             </p>
           </div>
         </Reveal>
