@@ -1,49 +1,55 @@
-"use client"
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
 import Reveal from "@/components/ui/Reveal";
-import Image from "next/image"
 
 export default function Hero() {
     return (
-        <Reveal>
-            <section className="section">
-                <div className="section-inner">
-                    <div className="grid-split">
+        <section className="section bg-[var(--bg-cream)]">
+            <div className="section-inner grid items-center gap-16 md:grid-cols-2">
 
-                        {/* LEFT — TEXT */}
-                        <div className="space-y-10">
-
-                            <h1 className="font-serif text-4xl leading-tight lg:text-6xl">
-                                Live your life <br />
-                                in full bloom
-                            </h1>
-
-                            <p className="max-w-md text-lg text-neutral-600 leading-relaxed">
-
-                                Therapy for adults navigating anxiety, burnout, and life transitions.
-                            </p>
-
-                            <button className="inline-block border border-neutral-900 px-8 py-4 text-sm tracking-wide hover:bg-neutral-900 hover:text-white transition">
-                                Connect with me
-                            </button>
+                {/* IMAGE COLUMN — LEFT */}
+                <Reveal>
+                    <div className="flex justify-center md:justify-start">
+                        <div className="relative h-[520px] w-[360px] overflow-hidden rounded-t-full">
+                            <Image
+                                src="/images/hero.jpg"
+                                alt="Calm therapy environment"
+                                fill
+                                priority
+                                className="object-cover"
+                            />
                         </div>
-
-                        {/* RIGHT — IMAGE */}
-                        <div className="relative h-[460px] w-full flex justify-center lg:justify-end">
-                            <div className="relative h-full w-[320px] lg:w-[360px] overflow-hidden">
-                                <Image
-                                    src="/images/hero.jpg"
-                                    alt="Therapy space"
-                                    fill
-                                    className="object-cover rounded-[180px_180px_40px_40px]"
-                                    priority
-                                />
-                            </div>
-                        </div>
-
-
                     </div>
-                </div>
-            </section>
-        </Reveal>
-    )
+                </Reveal>
+
+                {/* TEXT COLUMN — RIGHT */}
+                <Reveal>
+                    <div className="max-w-xl space-y-8">
+                        <h1>
+                            Therapy for Anxiety, Trauma, and Burnout in Santa Monica, CA
+                        </h1>
+
+                        <p className="text-lg">
+                            I’m Dr. Maya Reynolds, PsyD — a licensed clinical psychologist
+                            offering thoughtful, evidence-based therapy for adults navigating
+                            anxiety, trauma, and emotional burnout. I provide in-person therapy
+                            in Santa Monica and telehealth across California.
+                        </p>
+
+                        <div className="flex gap-6 pt-4">
+                            <Link href="/contact" className="btn">
+                                Book a Consultation
+                            </Link>
+
+                            <Link href="/services" className="btn">
+                                Explore Services
+                            </Link>
+                        </div>
+                    </div>
+                </Reveal>
+            </div>
+        </section>
+    );
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import Accordion from "@/components/ui/Accordion";
 import Image from "next/image";
 import Reveal from "@/components/ui/Reveal";
@@ -5,45 +7,54 @@ import Reveal from "@/components/ui/Reveal";
 export default function FAQs() {
   const items = [
     {
-      title: "Do you take insurance?",
+      title: "Do you offer telehealth sessions?",
       content:
-        "I do not accept insurance directly, but I can provide superbills that you may submit to your insurance provider for potential reimbursement.",
+        "Yes. I offer secure telehealth therapy for clients located anywhere in California, in addition to in-person sessions in Santa Monica.",
     },
     {
-      title: "What are your rates?",
+      title: "What issues do you specialize in?",
       content:
-        "Session fees vary depending on the type of therapy. Please reach out directly for current rates and availability.",
+        "I work primarily with adults navigating anxiety, trauma, emotional burnout, and stress related to high-pressure or caregiving roles.",
     },
     {
-      title: "Do you have any openings?",
+      title: "What is EMDR therapy?",
       content:
-        "Availability changes periodically. The best way to check current openings is to contact me directly.",
+        "EMDR is an evidence-based therapy that helps the brain process distressing memories more adaptively. It’s often used for trauma but can also support anxiety and stress-related concerns.",
+    },
+    {
+      title: "Do you accept insurance?",
+      content:
+        "I do not accept insurance directly. However, I can provide superbills that you may submit to your insurance provider for potential out-of-network reimbursement.",
     },
   ];
 
   return (
-    <Reveal>
-      <section className="section bg-[var(--bg-cream)]">
-        <div className="section-inner grid gap-20 lg:grid-cols-2 items-center">
+    <section className="section bg-[var(--bg-cream)]">
+      <div className="section-inner grid gap-20 lg:grid-cols-2 items-center">
 
-          {/* Image */}
+        {/* IMAGE */}
+        <Reveal>
           <div className="relative h-[420px] max-w-md overflow-hidden rounded-[200px_200px_40px_40px]">
             <Image
               src="/images/faq.jpg"
-              alt="Soft calming florals"
+              alt="Calming therapy space with soft florals"
               fill
               className="object-cover"
             />
           </div>
+        </Reveal>
 
-          {/* Accordion */}
+        {/* ACCORDION */}
+        <Reveal>
           <div>
-            <h2 className="mb-10">FAQs</h2>
+            <h2 className="mb-10">
+              Frequently Asked Questions
+            </h2>
             <Accordion items={items} />
           </div>
+        </Reveal>
 
-        </div>
-      </section>
-    </Reveal>
+      </div>
+    </section>
   );
 }

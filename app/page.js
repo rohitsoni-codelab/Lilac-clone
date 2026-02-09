@@ -4,7 +4,8 @@ import Services from "@/components/home/Services";
 import Support from "@/components/home/Support";
 import Intro from "@/components/home/Intro";
 import FAQs from "@/components/home/FAQs";
-import Background from "@/components/home/Background";
+import Office from "@/components/home/Office";
+
 import FinalCTA from "@/components/home/FinalCTA";
 
 export default function HomePage() {
@@ -16,7 +17,7 @@ export default function HomePage() {
       <Support />
       <Intro />
       <FAQs />
-      <Background />
+      <Office />
       <FinalCTA />
     </>
   );

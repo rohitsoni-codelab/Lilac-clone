@@ -1,60 +1,58 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/ui/Reveal";
 
 export default function Services() {
   return (
-    <Reveal>
-      <section className="section bg-[var(--bg-cream)]">
-        <div className="section-inner">
+    <section className="section bg-[var(--bg-cream)]">
+      <div className="section-inner">
 
-          {/* Section Heading */}
+        {/* Section Heading */}
+        <Reveal>
           <h2 className="mb-24 text-center">
-            My Specialties
+            Areas of Focus
           </h2>
+        </Reveal>
 
-          {/* Cards Grid */}
-          <div className="grid gap-16 md:grid-cols-3">
+        {/* Cards Grid */}
+        <div className="grid gap-16 md:grid-cols-3">
 
-            <ServiceCard
-              title="Anxiety & Panic"
-              image="/images/service-anxiety.jpg"
-              alt="Anxiety therapy"
-              text="For adults experiencing chronic worry, panic attacks, overthinking,
-              or constant tension. We focus on understanding anxiety patterns and
-              developing tools to feel more grounded and regulated."
-            />
+          <ServiceCard
+            title="Anxiety & Panic Therapy"
+            image="/images/service-anxiety.jpg"
+            alt="Anxiety therapy for adults"
+            text="Support for adults experiencing chronic anxiety, panic attacks, racing thoughts, or constant tension. Therapy focuses on understanding anxiety patterns and building practical tools to feel more grounded, regulated, and present."
+          />
 
-            <ServiceCard
-              title="Trauma & EMDR"
-              image="/images/service-trauma.jpg"
-              alt="Trauma therapy"
-              text="Support for adults navigating single-incident trauma or long-standing
-              patterns rooted in childhood, relationships, or chronic stress.
-              Work is paced carefully with safety and stabilization at the core."
-            />
+          <ServiceCard
+            title="Trauma & EMDR Therapy"
+            image="/images/service-trauma.jpg"
+            alt="Trauma and EMDR therapy"
+            text="Trauma-informed therapy for adults navigating single-incident trauma or long-standing emotional patterns rooted in early experiences or relationships. Work is paced carefully, with safety and nervous system regulation at the core."
+          />
 
-            <ServiceCard
-              title="Burnout & High Pressure"
-              image="/images/service-burnout.jpg"
-              alt="Burnout therapy"
-              text="Therapy for professionals, creatives, and entrepreneurs feeling
-              exhausted, disconnected, or stuck in perfectionism—focused on
-              slowing down and building sustainable ways of living and working."
-            />
+          <ServiceCard
+            title="Burnout & High-Pressure Professionals"
+            image="/images/service-burnout.jpg"
+            alt="Burnout therapy for professionals"
+            text="Therapy for professionals, creatives, and caregivers feeling emotionally exhausted, disconnected, or stuck in cycles of overwork or perfectionism. Sessions focus on slowing down and creating more sustainable ways of living and working."
+          />
 
-          </div>
+        </div>
 
-          {/* CTA — THIS IS THE CORRECT LOCATION */}
+        {/* CTA */}
+        <Reveal>
           <div className="mt-24 text-center">
             <Link href="/services" className="btn">
               View All Services
             </Link>
           </div>
+        </Reveal>
 
-        </div>
-      </section>
-    </Reveal>
+      </div>
+    </section>
   );
 }
 
@@ -64,15 +62,8 @@ export default function Services() {
 function ServiceCard({ title, image, alt, text }) {
   return (
     <Reveal>
-      <div
-        className="
-          bg-white
-          border border-[var(--border-soft)]
-          px-8 py-12
-          text-center
-          space-y-8
-        "
-      >
+      <div className="bg-white border border-[var(--border-soft)] px-8 py-12 text-center space-y-8">
+
         {/* Image */}
         <div className="relative w-44 h-44 mx-auto">
           <Image
