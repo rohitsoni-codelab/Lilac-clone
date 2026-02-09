@@ -1,26 +1,487 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+/* ===============================
+   DESIGN TOKENS (Lilac Theme)
+================================ */
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-cream: #f7f3ee;
+    --bg-warm: #e8e4dc;
+    --bg-sage: #7c7a4a;
+
+    --text-primary: #2f2f2f;
+    --text-muted: #6f6f6f;
+    --text-inverse: #ffffff;
+
+    --border-soft: #d6d1c8;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ===============================
+   GLOBAL BASE STYLES
+================================ */
+@layer base {
+  body {
+    @apply antialiased;
+    background-color: var(--bg-cream);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.65;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    color: var(--text-primary);
+  }
+
+  h1 {
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    line-height: 1.15;
+  }
+
+  h2 {
+    font-size: clamp(1.9rem, 3vw, 2.6rem);
+    line-height: 1.25;
+  }
+
+  h3 {
+    font-size: 1.35rem;
+    line-height: 1.35;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+}
+
+/* ===============================
+   SECTION SYSTEM
+================================ */
+@layer components {
+  .section {
+    width: 100%;
+    padding-block: clamp(5rem, 10vw, 8rem);
+  }
+
+  .section-inner {
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+}
+
+/* ===============================
+   BUTTON SYSTEM
+================================ */
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.75rem 1.8rem;
+    border: 1px solid currentColor;
+    background: transparent;
+
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+
+    transition: all 0.25s ease;
+  }
+
+  .btn:hover {
+    background: currentColor;
+    color: var(--bg-cream);
+  }
+
+  .btn-inverse {
+    color: #ffffff;
+  }
+
+  .btn-inverse:hover {
+    background: #ffffff;
+    color: var(--bg-sage);
+  }
+}
+
+/* ===============================
+   SUBSCRIBE SECTION
+================================ */
+@layer components {
+  .subscribe-box {
+    border: 1px solid rgba(255,255,255,0.45);
+    padding: clamp(3.5rem, 6vw, 5.5rem);
+  }
+
+  .subscribe-form {
+    margin-top: 2.8rem;
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .subscribe-input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.55);
+    padding: 0.6rem 0;
+    width: 260px;
+    color: white;
+    font-size: 0.85rem;
+    outline: none;
+  }
+
+  .subscribe-input::placeholder {
+    color: rgba(255,255,255,0.7);
+  }
+
+  .subscribe-privacy {
+    margin-top: 2.2rem;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.6);
+  }
+}
+
+/* ===============================
+   BLOG POST (THIS WAS MISSING)
+================================ */
+@layer components {
+  .blog-post {
+    max-width: 660px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .blog-post span {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 1.8rem;
+    color: var(--text-muted);
+  }
+
+  .blog-post h1 {
+    color: #2c3a1f;
+    margin-bottom: 2.8rem;
+  }
+
+  .blog-post p {
+    font-size: 0.92rem;
+    line-height: 1.75;
+    margin-bottom: 1.6rem;
+    color: #4b4b4b;
+    text-align: left;
+  }
+}
+
+/* ===============================
+   BLOG POST – FINAL TUNING
+================================ */
+@layer components {
+  .blog-post {
+    max-width: 640px;
+    margin-inline: auto;
+    text-align: center;
+    padding-top: 4rem;
+  }
+
+  .blog-date {
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #8a8a8a;
+    margin-bottom: 2.5rem;
+  }
+
+  .blog-post h1 {
+    color: #2c3a1f;
+    margin-bottom: 3.5rem;
+  }
+
+  .blog-body {
+    text-align: left;
+  }
+
+  .blog-body p {
+    font-size: 0.92rem;
+    line-height: 1.75;
+    margin-bottom: 2.2rem;
+    color: #4a4a4a;
+  }
+
+  .blog-prev {
+    margin-top: 4rem;
+    text-align: left;
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    color: #2c3a1f;
+  }
+
+  .blog-divider {
+    border: none;
+    border-top: 1px solid var(--border-soft);
+    margin-top: 6rem;
+  }
+}
+
+/* ===============================
+   BLOG NAVIGATION (PREV / NEXT)
+================================ */
+@layer components {
+  .blog-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5rem;
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    color: #2c3a1f;
+  }
+
+  .blog-nav a {
+    transition: opacity 0.2s ease;
+  }
+
+  .blog-nav a:hover {
+    opacity: 0.65;
+  }
+
+  .blog-nav-prev {
+    text-align: left;
+  }
+
+  .blog-nav-next {
+    text-align: right;
+  }
+}
+/* ===============================
+   CONTACT HERO POLISH
+================================ */
+@layer components {
+  .contact-hero-note {
+    letter-spacing: 0.04em;
+  }
+}
+/* ===============================
+   APPOINTMENT SECTION POLISH
+================================ */
+@layer components {
+  .appointment-frame {
+    background: #ffffff;
+    border: 1px solid var(--border-soft);
+    padding: clamp(3rem, 6vw, 4.5rem);
+    max-width: 420px;
+  }
+
+  .appointment-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* ===============================
+   OFFICE + MAP SECTION
+================================ */
+@layer components {
+  .office-map-frame {
+    background: #ffffff;
+    padding: 1rem;
+  }
+
+  .office-map-frame iframe {
+    width: 100%;
+    height: 340px;
+    border: 0;
+    filter: grayscale(100%) contrast(1.05);
+  }
+}
+/* ===============================
+   SOCIAL GRID (CONTACT)
+================================ */
+@layer components {
+  .social-grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .social-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .social-item {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: #e5e1d8;
+  }
+
+  .social-item img {
+    transition: opacity 0.25s ease;
+  }
+
+  .social-item:hover img {
+    opacity: 0.85;
+  }
+}
+
+/* ===============================
+   MOBILE POLISH (FINAL)
+================================ */
+@media (max-width: 767px) {
+  .section {
+    padding-block: 4rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .appointment-frame {
+    padding: 2.5rem 2rem;
+    max-width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .social-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+/* ===============================
+   SERVICES PAGE TYPOGRAPHY
+================================ */
+@layer components {
+  .services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  .service-item h2 {
+    margin-bottom: 1.5rem;
+    max-width: 28ch;
+  }
+
+  .service-item p {
+    font-size: 0.92rem;
+    line-height: 1.75;
+    max-width: 42ch;
+    color: #4b4b4b;
+  }
+
+  /* Mobile refinement */
+  @media (max-width: 767px) {
+    .services-list {
+      gap: 3.5rem;
+    }
+
+    .service-item h2 {
+      max-width: 100%;
+    }
+
+    .service-item p {
+      max-width: 100%;
+    }
+  }
+}
+/* ===============================
+   SERVICES – IMAGE LAYOUT
+================================ */
+@layer components {
+  .service-row {
+    display: grid;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .service-row {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .service-row-reverse {
+      direction: rtl;
+    }
+
+    .service-row-reverse > * {
+      direction: ltr;
+    }
+  }
+
+  .service-image {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    background: #e8e4dc;
+  }
+
+  .service-text h2 {
+    margin-bottom: 1.5rem;
+    max-width: 28ch;
+  }
+
+  .service-text p {
+    max-width: 42ch;
+    font-size: 0.92rem;
+    line-height: 1.75;
+    color: #4b4b4b;
+  }
+
+  /* Mobile */
+  @media (max-width: 767px) {
+    .service-row {
+      gap: 2.5rem;
+    }
+
+    .service-image {
+      aspect-ratio: 4 / 3;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .service-image {
+    aspect-ratio: 5 / 4;
+  }
+}
+
+/* ===============================
+   SERVICES – FINAL MOBILE POLISH
+================================ */
+@media (max-width: 767px) {
+  .services-list {
+    gap: 4rem;
+  }
+
+  .service-row {
+    gap: 2.75rem;
+  }
+
+  .service-text h2 {
+    margin-bottom: 1.25rem;
+  }
+
+  .service-text p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
 }
