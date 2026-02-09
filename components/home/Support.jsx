@@ -23,28 +23,31 @@ export default function Support() {
 
             <h2 className="font-serif text-3xl leading-tight">
               You don’t have to do this all alone.
+
             </h2>
 
             <p className="text-sm leading-relaxed">
-              If you’re facing any of these, there’s hope:
+              If you’re facing any of these challenges, support is available:
+
             </p>
 
             <ul className="space-y-3 text-sm">
-              <li>• Persistent feelings of overwhelm or stress</li>
-              <li>• Trouble focusing or making decisions</li>
-              <li>• Difficulty managing emotions</li>
-              <li>• Feeling disconnected, exhausted, or burned out</li>
-              <li>• A pervasive sense of always being “on edge”</li>
+              <li>Persistent feelings of overwhelm or stress</li>
+              <li>Difficulty focusing or making decisions</li>
+              <li>Trouble managing emotions</li>
+              <li>Feeling disconnected, exhausted, or burned out</li>
+              <li>A constant sense of being “on edge”</li>
+
             </ul>
 
             <p className="text-sm leading-relaxed">
-              With empathy and guidance, we’ll work together to navigate
-              the challenges life throws your way.
+              With empathy and guidance, we’ll work together to better understand what you’re experiencing and help you move toward feeling more grounded and supported.
+
             </p>
 
             <div>
               <Link href="/contact" className="btn">
-                Work with me
+                Work with me →
               </Link>
             </div>
 

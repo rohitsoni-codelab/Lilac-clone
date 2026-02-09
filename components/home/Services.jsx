@@ -23,21 +23,21 @@ export default function Services() {
             title="Anxiety & Panic Therapy"
             image="/images/service-anxiety.jpg"
             alt="Anxiety therapy for adults"
-            text="Support for adults experiencing chronic anxiety, panic attacks, racing thoughts, or constant tension. Therapy focuses on understanding anxiety patterns and building practical tools to feel more grounded, regulated, and present."
+            text="Support for adults experiencing chronic anxiety, panic attacks, racing thoughts, or constant tension. Therapy focuses on understanding anxiety patterns and developing practical tools to feel calmer, more regulated, and present in daily life."
           />
 
           <ServiceCard
             title="Trauma & EMDR Therapy"
             image="/images/service-trauma.jpg"
             alt="Trauma and EMDR therapy"
-            text="Trauma-informed therapy for adults navigating single-incident trauma or long-standing emotional patterns rooted in early experiences or relationships. Work is paced carefully, with safety and nervous system regulation at the core."
+            text="Trauma-informed therapy for adults navigating single-incident trauma or long-standing emotional patterns rooted in early experiences or relationships. Sessions are paced carefully, with safety and nervous system regulation at the core."
           />
 
           <ServiceCard
             title="Burnout & High-Pressure Professionals"
             image="/images/service-burnout.jpg"
             alt="Burnout therapy for professionals"
-            text="Therapy for professionals, creatives, and caregivers feeling emotionally exhausted, disconnected, or stuck in cycles of overwork or perfectionism. Sessions focus on slowing down and creating more sustainable ways of living and working."
+            text="Therapy for professionals, creatives, and caregivers feeling emotionally exhausted, disconnected, or stuck in cycles of overwork or perfectionism. Together, we focus on slowing down and creating more sustainable ways of living and working."
           />
 
         </div>

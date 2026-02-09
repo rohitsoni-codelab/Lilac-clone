@@ -15,10 +15,8 @@ export default function Office() {
                             A Calm Space for Healing
                         </h2>
                         <p>
-                            My Santa Monica office is designed to feel quiet, comfortable, and
-                            grounding. The space supports a sense of ease and privacy, allowing
-                            sessions to feel focused, intentional, and emotionally safe from
-                            the moment you arrive.
+                            My Santa Monica office is designed to feel quiet, comfortable, and grounding. The space supports a sense of privacy and ease, allowing therapy sessions to feel focused, intentional, and emotionally safe from the moment you arrive.
+
                         </p>
                     </div>
                 </Reveal>

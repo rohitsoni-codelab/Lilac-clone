@@ -28,14 +28,13 @@ export default function Hero() {
                 <Reveal>
                     <div className="max-w-xl space-y-8">
                         <h1>
-                            Therapy for Anxiety, Trauma, and Burnout in Santa Monica, CA
+                            Therapy for Anxiety, Trauma, and Burnout in Santa Monica, California
+
                         </h1>
 
                         <p className="text-lg">
-                            I’m Dr. Maya Reynolds, PsyD — a licensed clinical psychologist
-                            offering thoughtful, evidence-based therapy for adults navigating
-                            anxiety, trauma, and emotional burnout. I provide in-person therapy
-                            in Santa Monica and telehealth across California.
+                            I’m Dr. Maya Reynolds, PsyD, a licensed clinical psychologist helping adults feel more grounded, regulated, and supported through anxiety, trauma, and chronic stress.
+
                         </p>
 
                         <div className="flex gap-6 pt-4">

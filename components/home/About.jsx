@@ -12,29 +12,23 @@ export default function About() {
         <Reveal>
           <div className="max-w-xl space-y-6">
             <h2>
-              Meet Dr. Maya Reynolds, PsyD
+              A Thoughtful, Grounded Approach to Therapy
+
             </h2>
 
             <p>
-              I’m a licensed clinical psychologist offering therapy for adults
-              navigating anxiety, trauma, and emotional burnout. My work is
-              grounded in evidence-based care and shaped by a belief that therapy
-              should feel thoughtful, collaborative, and deeply human.
+              I’m Dr. Maya Reynolds, PsyD, a licensed clinical psychologist based in Santa Monica, California. I work with adults who appear high-functioning on the outside but feel overwhelmed by anxiety, burnout, or the lasting effects of past experiences.
+
             </p>
 
             <p>
-              I integrate approaches such as EMDR, cognitive-behavioral therapy
-              (CBT), mindfulness-based practices, and trauma-informed care to
-              support meaningful, lasting change. Sessions are paced
-              intentionally, with attention to both emotional insight and
-              nervous system regulation.
+              My approach to therapy is warm, collaborative, and grounded in evidence-based care. I integrate cognitive-behavioral therapy (CBT), EMDR, mindfulness-based practices, and body-oriented techniques to support both emotional insight and nervous system regulation.
+
             </p>
 
             <p>
-              I offer in-person therapy in Santa Monica, California, as well as
-              secure telehealth sessions for clients across the state. Therapy is
-              a space to slow down, reconnect with yourself, and build more
-              sustainable ways of living and working.
+              I offer in-person therapy from my Santa Monica office as well as secure telehealth sessions for adults across California. Therapy is a space to slow down, reconnect with yourself, and build more sustainable ways of living and working.
+
             </p>
           </div>
         </Reveal>

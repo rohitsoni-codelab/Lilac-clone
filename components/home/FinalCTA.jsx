@@ -10,22 +10,23 @@ export default function FinalCTA() {
 
         <Reveal>
           <h2 className="mb-6 text-white">
-            Begin Therapy When You’re Ready
+            Get Started Today
+
           </h2>
         </Reveal>
 
         <Reveal>
           <p className="mb-10 text-white/80">
-            If you’re feeling overwhelmed, burned out, or emotionally stuck,
-            therapy can offer space to slow down, gain clarity, and feel more
-            grounded. I offer in-person sessions in Santa Monica, California,
-            as well as secure telehealth therapy across the state.
+            If you’re ready to take the first step toward feeling more grounded and supported, I invite you to reach out. I offer in-person therapy in Santa Monica and secure telehealth sessions across California.
+
           </p>
         </Reveal>
 
         <Reveal>
           <Link href="/contact" className="btn btn-inverse">
-            Schedule a Consultation
+            Get in Touch
+
+
           </Link>
         </Reveal>
 
