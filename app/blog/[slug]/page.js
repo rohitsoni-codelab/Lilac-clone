@@ -23,13 +23,19 @@ export default function BlogPostPage() {
       <section className="section bg-[var(--bg-cream)]">
         <div className="section-inner blog-post">
 
-          <span className="blog-date">{post.date}</span>
+          <span className="blog-date">
+            {post.date}
+          </span>
 
-          <h1>{post.title}</h1>
+          <h1>
+            {post.title}
+          </h1>
 
           <div className="blog-body">
             {post.content.map((para, i) => (
-              <p key={i}>{para}</p>
+              <p key={i}>
+                {para}
+              </p>
             ))}
           </div>
 
@@ -42,7 +48,9 @@ export default function BlogPostPage() {
               >
                 ← {prevPost.title}
               </Link>
-            ) : <span />}
+            ) : (
+              <span />
+            )}
 
             {nextPost ? (
               <Link
@@ -51,7 +59,9 @@ export default function BlogPostPage() {
               >
                 {nextPost.title} →
               </Link>
-            ) : <span />}
+            ) : (
+              <span />
+            )}
           </div>
 
         </div>

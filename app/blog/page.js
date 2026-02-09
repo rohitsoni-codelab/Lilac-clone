@@ -4,10 +4,13 @@ import Subscribe from "@/components/blog/Subscribe";
 
 export default function BlogPage() {
   return (
-    <main>
+    <>
       <BlogHero />
       <BlogGrid />
+
+      {/* Full-width Subscribe block */}
       <Subscribe />
-    </main>
+    </>
   );
 }
+

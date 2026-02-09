@@ -1,30 +1,26 @@
-import Image from "next/image";
+"use client";
+
+import Reveal from "@/components/ui/Reveal";
 
 export default function BlogHero() {
   return (
     <section className="section bg-[var(--bg-cream)]">
-      <div className="section-inner max-w-6xl grid md:grid-cols-2 gap-16 items-center">
+      <div className="section-inner text-center max-w-2xl">
 
-        {/* Image */}
-        <div className="relative aspect-[3/4] overflow-hidden rounded-t-full">
-          <Image
-            src="/images/hero.jpg"
-            alt="Blog Hero"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
+        <Reveal>
+          <h1>
+            Reflections on Therapy, Healing, and Emotional Wellbeing
+          </h1>
+        </Reveal>
 
-        {/* Text */}
-        <div>
-          <h1 className="mb-6">The Lilac Blog</h1>
-          <p className="max-w-md mb-4">
-            My tiny corner of the internet where I talk about all
-            things healing, heart, and wholeness.
+        <Reveal>
+          <p className="mt-6 text-lg">
+            Thoughts and insights from my work as a licensed clinical psychologist,
+            exploring anxiety, trauma, burnout, and the process of meaningful change.
+            These reflections are written to support understanding, self-awareness,
+            and emotional clarity.
           </p>
-          <p className="font-medium">Glad you're here.</p>
-        </div>
+        </Reveal>
 
       </div>
     </section>

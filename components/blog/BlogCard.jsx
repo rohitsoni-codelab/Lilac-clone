@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,11 +12,7 @@ export default function BlogCard({ post }) {
           src={post.image}
           alt={post.title}
           fill
-          className="
-            object-cover
-            transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
-            group-hover:scale-105
-          "
+          className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
         />
       </div>
 
@@ -31,12 +29,7 @@ export default function BlogCard({ post }) {
       {/* Link */}
       <Link
         href={`/blog/${post.slug}`}
-        className="
-          inline-block text-sm
-          underline underline-offset-4
-          transition-opacity duration-300
-          hover:opacity-70
-        "
+        className="inline-block text-sm underline underline-offset-4 transition-opacity duration-300 hover:opacity-70"
       >
         Read More
       </Link>

@@ -6,13 +6,18 @@
 @layer base {
   :root {
     /* Backgrounds */
-    --bg-cream: #f6f2ec;     /* primary canvas */
-    --bg-warm: #ece8df;      /* alternating sections */
-    --bg-accent: #7a7d4f;    /* CTA / emphasis */
+    --bg-cream: #f6f2ec;
+    /* primary canvas */
+    --bg-warm: #ece8df;
+    /* alternating sections */
+    --bg-accent: #7a7d4f;
+    /* CTA / emphasis */
 
     /* Text */
-    --text-primary: #2c3a1f; /* headings / nav */
-    --text-body: #2f2f2f;    /* paragraphs */
+    --text-primary: #2c3a1f;
+    /* headings / nav */
+    --text-body: #2f2f2f;
+    /* paragraphs */
     --text-muted: #6f6f6f;
     --text-inverse: #ffffff;
 
@@ -33,7 +38,10 @@
     line-height: 1.65;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-serif);
     font-weight: 400;
     letter-spacing: -0.015em;
@@ -78,7 +86,7 @@
 }
 
 /* ===============================
-   BUTTON SYSTEM
+   BUTTON SYSTEM (FIXED)
 ================================ */
 @layer components {
   .btn {
@@ -87,110 +95,77 @@
     justify-content: center;
 
     padding: 0.75rem 1.8rem;
-    border: 1px solid currentColor;
+    border: 1px solid var(--text-primary);
     background: transparent;
+
+    color: var(--text-primary);
 
     font-size: 0.65rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
 
-    transition: all 0.25s ease;
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
 
+  /* Light background hover */
   .btn:hover {
-    background: currentColor;
+    background: var(--text-primary);
     color: var(--bg-cream);
   }
 
+  /* Dark section buttons */
   .btn-inverse {
-    color: var(--text-inverse);
+    border-color: #ffffff;
+    color: #ffffff;
   }
 
   .btn-inverse:hover {
-    background: var(--text-inverse);
+    background: #ffffff;
     color: var(--bg-accent);
   }
 }
 
 /* ===============================
-   SUBSCRIBE SECTION
+   BUTTON SYSTEM (POLISHED)
 ================================ */
 @layer components {
-  .subscribe-box {
-    border: 1px solid rgba(255,255,255,0.45);
-    padding: clamp(3.5rem, 6vw, 5.5rem);
-  }
-
-  .subscribe-form {
-    margin-top: 2.8rem;
-    display: flex;
-    gap: 2.5rem;
+  .btn {
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-    align-items: flex-end;
-  }
 
-  .subscribe-input {
+    padding: 0.75rem 1.8rem;
+    border: 1px solid var(--text-primary);
     background: transparent;
-    border: none;
-    border-bottom: 1px solid rgba(255,255,255,0.55);
-    padding: 0.6rem 0;
-    width: 260px;
-    color: white;
-    font-size: 0.85rem;
-    outline: none;
-  }
+    color: var(--text-primary);
 
-  .subscribe-input::placeholder {
-    color: rgba(255,255,255,0.7);
-  }
-
-  .subscribe-privacy {
-    margin-top: 2.2rem;
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.6);
-  }
-}
-
-/* ===============================
-   BLOG POST STYLES
-================================ */
-@layer components {
-  .blog-post {
-    max-width: 640px;
-    margin-inline: auto;
-    text-align: center;
-    padding-top: 4rem;
-  }
-
-  .blog-date {
-    display: block;
     font-size: 0.65rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: #8a8a8a;
-    margin-bottom: 2.5rem;
+
+    /* 👇 THIS IS THE KEY */
+    transition:
+      background-color 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+      color 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+
   }
 
-  .blog-post h1 {
-    color: var(--text-primary);
-    margin-bottom: 3.5rem;
+  /* Light background hover */
+  .btn:hover {
+    background: var(--text-primary);
+    color: var(--bg-cream);
   }
 
-  .blog-body {
-    text-align: left;
+  /* Dark section buttons */
+  .btn-inverse {
+    border-color: #ffffff;
+    color: #ffffff;
   }
 
-  .blog-body p {
-    font-size: 0.92rem;
-    line-height: 1.75;
-    margin-bottom: 2.2rem;
-    color: #4a4a4a;
-  }
-
-  .blog-divider {
-    border: none;
-    border-top: 1px solid var(--border-soft);
-    margin-top: 6rem;
+  .btn-inverse:hover {
+    background: #ffffff;
+    color: var(--bg-accent);
   }
 }
 
@@ -300,7 +275,7 @@
       direction: rtl;
     }
 
-    .service-row-reverse > * {
+    .service-row-reverse>* {
       direction: ltr;
     }
   }
@@ -347,5 +322,84 @@
 
   .social-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===============================
+   SUBSCRIBE – FINAL (THEME SAFE)
+================================ */
+@layer components {
+  .subscribe-dark {
+    background: var(--bg-accent);
+    padding: clamp(4rem, 7vw, 6rem);
+    text-align: center;
+    color: var(--text-inverse);
+  }
+
+  .subscribe-dark h2 {
+    color: var(--text-inverse);
+    margin-bottom: 1rem;
+  }
+
+  .subscribe-dark p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 3rem;
+  }
+
+  .subscribe-form {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .subscribe-form input {
+    width: 320px;
+    padding: 0.9rem 1rem;
+    border: none;
+    background: #ffffff;
+    color: #2f2f2f;
+    font-size: 0.9rem;
+  }
+
+  .subscribe-form input::placeholder {
+    color: #8a8a8a;
+  }
+
+  .subscribe-form button {
+    padding: 0.9rem 1.8rem;
+    background: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+
+    transition: all 0.25s ease;
+  }
+
+  .subscribe-form button:hover {
+    background: #ffffff;
+    color: var(--bg-accent);
+  }
+
+  .subscribe-note {
+    display: block;
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  @media (max-width: 767px) {
+    .subscribe-form {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .subscribe-form input {
+      width: 100%;
+      max-width: 320px;
+    }
   }
 }
