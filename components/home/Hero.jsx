@@ -20,6 +20,7 @@ export default function Hero() {
                                 priority
                                 className="object-cover"
                             />
+                            
                         </div>
                     </div>
                 </Reveal>
